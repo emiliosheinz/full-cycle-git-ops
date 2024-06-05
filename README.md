@@ -11,3 +11,8 @@ To address this issue, GitOps was introduced. GitOps is a way to do Continuous D
 ![Development Lifecycle with GitOps](./docs/images/with-gitops.png)
 
 This also reduces coupling between the CI/CD process and the target environment. Since the CI/CD pipeline does not need to connect to the target environment to deploy the application.
+
+## TODO
+
+- Improve readme with running instructions
+- Add more details about the project architecture and flow
