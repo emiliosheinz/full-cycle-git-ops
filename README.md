@@ -12,10 +12,9 @@ To address this issue, GitOps was introduced. GitOps is a way to do Continuous D
 
 This also reduces coupling between the CI/CD process and the target environment. Since the CI/CD pipeline does not need to connect to the target environment to deploy the application.
 
-## TODO
+## What happens when you commit a change to this repository?
 
-- Improve readme with running instructions
-- Add more details about the project architecture and flow
+When you commit a change to this repository, the [CI/CD pipeline](./.github/workflows/continuous-delivery.yaml) will be triggered to build and commit the new Docker image tag to our [Kustomization file](./k8s/kustomization.yaml). Once the Kustomization file is updated, Argo CD will be notified, allowing you to approve the deploy of a new version of the application to the Kubernetes cluster.
 
 ## Running Locally
 
@@ -59,5 +58,3 @@ This also reduces coupling between the CI/CD process and the target environment.
 1. Access https://localhost:8080
 1. Login with the `admin` user and the password you got previously
 1. And follow the steps [in this video](https://github.com/emiliosheinz/full-cycle-git-ops/raw/main/docs/videos/create-app-on-argocd.mp4) to create a new app
-   
-     
