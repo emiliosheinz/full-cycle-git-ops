@@ -16,3 +16,46 @@ This also reduces coupling between the CI/CD process and the target environment.
 
 - Improve readme with running instructions
 - Add more details about the project architecture and flow
+
+## Running Locally
+
+1. Create the Kubernetes cluster using kind
+
+   ```bash
+   kind create cluster --name=full-cycle-git-ops
+   ```
+
+1. Apply the Kubernetes configuration
+
+   ```bash
+   kubectl apply -k k8s/
+   ```
+
+1. Install Argo CD on the cluster
+
+   ```bash
+   kubectl create namespace argocd
+   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+   ```
+
+1. Download and install the Argo CD CLI
+
+   ```bash
+   brew install argocd
+   ```
+
+1. Get the Argo CD password
+
+   ```bash
+   kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+   ```
+
+1. Run Argo CD
+
+   ```bash
+   kubectl port-forward svc/argocd-server -n argocd 8080:443
+   ```
+
+1. Access https://localhost:8080
+1. Login with the `admin` user and the password you got previously
+1. And follow the steps in the video below to create a new app
