@@ -58,4 +58,6 @@ This also reduces coupling between the CI/CD process and the target environment.
 
 1. Access https://localhost:8080
 1. Login with the `admin` user and the password you got previously
-1. And follow the steps in the video below to create a new app
+1. And follow the steps [in this video](https://github.com/emiliosheinz/full-cycle-git-ops/raw/main/docs/videos/create-app-on-argocd.mp4) to create a new app
+   
+     
