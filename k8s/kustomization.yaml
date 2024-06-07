@@ -8,4 +8,4 @@ resources:
 images:
 - name: goserver
   newName: emiliosheinz/gitops-fc
-  newTag: aa46ba4daa94ed6db583af0b6705ed34f57d8457
+  newTag: a48478259d14a8a3f5d0196e1860b602aac4ce00
